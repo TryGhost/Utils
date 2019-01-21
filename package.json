@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "repository": "https://github.com/TryGhost/Ghost-Utils",
+  "author": "Ghost Foundation",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "eslintIgnore": [
+    "**/node_modules/**"
+  ],
+  "scripts": {
+    "dev": "echo \"Implement me!\"",
+    "presetup": "yarn",
+    "setup": "lerna bootstrap",
+    "test:parent": "NODE_ENV=testing mocha './test/**/*.test.js'",
+    "test": "yarn test:parent && lerna run test",
+    "lint": "eslint . --ext .js --cache",
+    "posttest": "yarn lint",
+    "preship": "yarn test",
+    "ship": "lerna publish"
+  },
+  "devDependencies": {
+    "eslint": "5.12.1",
+    "eslint-plugin-ghost": "0.1.0",
+    "mocha": "5.2.0",
+    "should": "13.2.3",
+    "sinon": "7.2.3"
+  }
+}
