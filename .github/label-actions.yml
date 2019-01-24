@@ -16,7 +16,7 @@ issues:
       comment: |
         Hey @{issue-author} :wave: Friendly reminder: we don't track feature requests on GitHub.
 
-        Please look for similar ideas to vote for on the[forum](https://forum.ghost.org/c/Ideas/l/votes) and if you can't anything similar then post your own idea.
+        Please look for similar ideas to vote for on the [forum](https://forum.ghost.org/c/Ideas/l/votes) and if you can't anything similar then post your own idea.
 
         FYI: Many projects have their own support guidelines and GitHub will highlight them for you as it did here, or the project owners will use issue templates to point you in the right direction. Reading the guidelines or issue templates before opening issues can save you and project maintainers valuable time.
       close: true
