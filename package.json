@@ -20,8 +20,8 @@
     "ship": "lerna publish"
   },
   "devDependencies": {
-    "eslint": "5.12.1",
-    "eslint-plugin-ghost": "0.1.0",
+    "eslint": "5.15.1",
+    "eslint-plugin-ghost": "0.2.0",
     "mocha": "5.2.0",
     "should": "13.2.3",
     "sinon": "7.2.7"
