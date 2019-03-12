@@ -10,37 +10,16 @@ module.exports.draft = (options = {}) => {
     let draft = true;
     let prerelease = false;
 
-    if (!options.changelogPath) {
-        throw new Error('changelogPath is required.');
-    }
-
-    if (!options.github) {
-        throw new Error('github is required.');
-    }
-
-    if (!options.github.username) {
-        throw new Error('github username is required.');
-    }
-
-    if (!options.github.token) {
-        throw new Error('github token is required.');
-    }
-
-    if (!options.userAgent) {
-        throw new Error('userAgent is required.');
-    }
-
-    if (!options.uri) {
-        throw new Error('uri is required.');
-    }
-
-    if (!options.tagName) {
-        throw new Error('tagName is required.');
-    }
-
-    if (!options.releaseName) {
-        throw new Error('releaseName is required.');
-    }
+    localUtils.checkMissingOptions(options,
+        'changelogPath',
+        'github',
+        'github.username',
+        'github.token',
+        'userAgent',
+        'uri',
+        'tagName',
+        'releaseName'
+    );
 
     if (options.hasOwnProperty('draft')) {
         draft = options.draft;
@@ -94,29 +73,14 @@ module.exports.draft = (options = {}) => {
 };
 
 module.exports.uploadZip = (options = {}) => {
-    if (!options.github) {
-        throw new Error('github is required.');
-    }
-
-    if (!options.github.username) {
-        throw new Error('github username is required.');
-    }
-
-    if (!options.github.token) {
-        throw new Error('github token is required.');
-    }
-
-    if (!options.zipPath) {
-        throw new Error('github zipPath is required.');
-    }
-
-    if (!options.userAgent) {
-        throw new Error('userAgent is required.');
-    }
-
-    if (!options.uri) {
-        throw new Error('uri is required.');
-    }
+    localUtils.checkMissingOptions(options,
+        'zipPath',
+        'github',
+        'github.username',
+        'github.token',
+        'userAgent',
+        'uri'
+    );
 
     const auth = 'Basic ' + new Buffer(options.github.username + ':' + options.github.token).toString('base64');
     const stats = fs.statSync(options.zipPath);
@@ -149,13 +113,10 @@ module.exports.uploadZip = (options = {}) => {
 };
 
 module.exports.get = (options = {}) => {
-    if (!options.userAgent) {
-        throw new Error('userAgent is required.');
-    }
-
-    if (!options.uri) {
-        throw new Error('uri is required.');
-    }
+    localUtils.checkMissingOptions(options,
+        'userAgent',
+        'uri'
+    );
 
     const reqOptions = {
         uri: options.uri,

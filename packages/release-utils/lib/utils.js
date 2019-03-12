@@ -20,3 +20,12 @@ module.exports.getEmojiCommits = (content) => {
 
     return content;
 };
+
+const get = o => p => p.split('.').reduce((obj, prop) => obj && obj[prop], o);
+module.exports.checkMissingOptions = (options = {}, ...fields) => {
+    const missing = options.filter(get(fields));
+
+    if (missing.length) {
+        throw new Error(`Missing options: ${missing.join(',')}`);
+    }
+};

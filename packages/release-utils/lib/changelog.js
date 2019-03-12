@@ -1,28 +1,24 @@
 const execa = require('execa');
 const _ = require('lodash');
 
+const localUtils = require('./utils');
+
 class Changelog {
     constructor(options = {}) {
-        if (!options.folder) {
-            throw new Error('folder required.');
-        }
-
-        if (!options.changelogPath) {
-            throw new Error('changelogPath required.');
-        }
+        localUtils.checkMissingOptions(options,
+            'folder',
+            'changelogPath'
+        );
 
         this.changelogPath = options.changelogPath;
         this.folder = options.folder;
     }
 
     write(options = {}) {
-        if (!options.githubRepoPath) {
-            throw new Error('githubRepoPath required.');
-        }
-
-        if (!options.lastVersion) {
-            throw new Error('lastVersion required.');
-        }
+        localUtils.checkMissingOptions(options,
+            'githubRepoPath',
+            'lastVersion'
+        );
 
         let sign = '>';
 
