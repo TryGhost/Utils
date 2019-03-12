@@ -9,6 +9,7 @@ const localUtils = require('./utils');
 module.exports.draft = (options = {}) => {
     let draft = true;
     let prerelease = false;
+    let filterEmojiCommits = true;
 
     localUtils.checkMissingOptions(options,
         'changelogPath',
@@ -29,8 +30,15 @@ module.exports.draft = (options = {}) => {
         prerelease = options.prerelease;
     }
 
+    if (options.hasOwnProperty('filterEmojiCommits')) {
+        filterEmojiCommits = options.filterEmojiCommits;
+    }
+
     let content = fs.readFileSync(options.changelogPath).toString('utf8').split(os.EOL);
-    content = localUtils.getEmojiCommits(content);
+
+    if (filterEmojiCommits) {
+        content = localUtils.filterEmojiCommits(content);
+    }
 
     content = content.filter((item) => {
         return item !== undefined;

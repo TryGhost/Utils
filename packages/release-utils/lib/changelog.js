@@ -31,7 +31,6 @@ class Changelog {
         ];
 
         _.each(commands, (command) => {
-            console.log(command);
             execa.shellSync(command, {cwd: options.folder || this.folder});
         });
 
