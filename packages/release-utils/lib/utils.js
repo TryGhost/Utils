@@ -26,7 +26,7 @@ module.exports.filterEmojiCommits = (content) => {
 
 module.exports.checkMissingOptions = (options = {}, ...requiredFields) => {
     const missing = requiredFields.filter((requiredField) => {
-        return !options[requiredField];
+        return !_.get(options, requiredField);
     });
 
     if (missing.length) {
