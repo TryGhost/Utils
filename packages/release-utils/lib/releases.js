@@ -6,7 +6,7 @@ const request = require('request');
 
 const localUtils = require('./utils');
 
-module.exports.draft = (options = {}) => {
+module.exports.create = (options = {}) => {
     let draft = true;
     let prerelease = false;
     let filterEmojiCommits = true;

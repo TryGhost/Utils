@@ -11,6 +11,78 @@ or
 
 ## Usage
 
+Create Gist:
+
+```
+const releaseUtils = require('@tryghost/release-utils');
+
+
+releaseUtils
+    .gist
+    .create({
+        userAgent: String,
+        gistName: String,
+        gistDescription: String,
+        changelogPath: String [Path on Disk]
+        github: {
+            username: String
+            token: String
+        },
+        isPublic: Boolean [optional, Default: true]
+    })
+```
+
+Create Changelog:
+
+```
+const releaseUtils = require('@tryghost/release-utils');
+
+
+const changelog = new releaseUtils.Changelog({
+    changelogPath: String [Path on Disk],
+    folder: String [Path on Disk]
+});
+
+changelog
+    .write({
+        githubRepoPath: String,
+        lastVersion: String
+    })
+    .write({
+        githubRepoPath: String
+        lastVersion: String
+        append: Boolean [optional, Default: false],
+        folder: String
+    })
+    .sort()
+    .clean()
+```
+
+Create Release:
+
+```
+const releaseUtils = require('@tryghost/release-utils');
+
+
+releaseUtils
+    .releases
+    .create({
+        tagName: String,
+        releaseName: String,
+        userAgent: String,
+        uri: String,
+        github: {
+            username: String,
+            token: String,
+        },
+        changelogPath: String [Path on Disk],
+        gistUrl: String [optional],
+        preRelease: Boolean [optional, Default: false],
+        draft: Boolean [optional, Default: true],
+        filterEmojiCommits: Boolean [optional, Default: true]
+    });
+```
+
 
 ## Develop
 
