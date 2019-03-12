@@ -52,13 +52,13 @@ changelog
         githubRepoPath: String
         lastVersion: String
         append: Boolean [optional, Default: false],
-        folder: String
+        folder: String [optional, Path on Disk]
     })
     .sort()
     .clean()
 ```
 
-Create Release:
+Create & Upload Release:
 
 ```
 const releaseUtils = require('@tryghost/release-utils');
@@ -81,6 +81,18 @@ releaseUtils
         draft: Boolean [optional, Default: true],
         filterEmojiCommits: Boolean [optional, Default: true]
     });
+    
+releaseUtils
+    .releases
+    .uploadZip({
+        github: {
+            username: String,
+            token: String
+        },
+        zipPath: String [Path on Disk],
+        uri: String,
+        userAgent: String
+    })
 ```
 
 
