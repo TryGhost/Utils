@@ -11,6 +11,7 @@ module.exports = SessionFromToken;
  * @param { (token: Token) => Promise<Lookup> } deps.getLookupFromToken
  * @param { (lookup: Lookup) => Promise<User> } deps.findUserByLookup
  * @param { (req: Req, res: Res, user: User) => Promise<void> } deps.createSession
+ * @param { boolean } deps.callNextWithError - Whether next should be call with an error or just pass through
  *
  * @returns {ExpressMiddlewareFn}
  */
@@ -18,7 +19,8 @@ function SessionFromToken({
     getTokenFromRequest,
     getLookupFromToken,
     findUserByLookup,
-    createSession
+    createSession,
+    callNextWithError
 }) {
     return async function handler(req, res, next) {
         try {
@@ -28,7 +30,11 @@ function SessionFromToken({
             await createSession(req, res, user);
             next();
         } catch (err) {
-            next(err);
+            if (callNextWithError) {
+                next(err);
+            } else {
+                next();
+            }
         }
     };
 }
