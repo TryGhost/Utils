@@ -15,6 +15,7 @@ or
 
 ```js
 const sessionFromTokenMiddleware = require('@tryghost/mw-session-from-token')({
+    callNextWithError: true,
     async createSession(req, res, user) {
         req.session.user_id = user.id;
     },
