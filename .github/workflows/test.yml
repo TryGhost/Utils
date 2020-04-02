@@ -7,10 +7,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '10', '12' ]
+        node: [ 10, 12 ]
     env:
       FORCE_COLOR: 1
     name: Node ${{ matrix.node }}
@@ -20,5 +20,5 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: yarn global add lerna
-      - run: yarn install
+      - run: yarn
       - run: yarn test
