@@ -24,9 +24,9 @@ const {
 
 /**
  * @typedef {object} SessionService
- * @prop { (req: Req, res: Res) => Promise<User | null> } getUserForSession
- * @prop { (req: Req, res: Res) => Promise<void> } destroyCurrentSession
- * @prop { (req: Req, res: Res, user: User) => Promise<void> } createSessionForUser
+ * @prop {(req: Req, res: Res) => Promise<User | null>} getUserForSession
+ * @prop {(req: Req, res: Res) => Promise<void>} destroyCurrentSession
+ * @prop {(req: Req, res: Res, user: User) => Promise<void>} createSessionForUser
  */
 
 /**
