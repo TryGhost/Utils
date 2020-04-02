@@ -9,7 +9,7 @@
     "dev": "echo \"Implement me!\"",
     "test": "NODE_ENV=testing mocha './test/**/*.test.js'",
     "lint": "eslint . --ext .js --cache",
-    "types": "tsc",
+    "types": "rm -r types && tsc",
     "pretest": "yarn types",
     "posttest": "yarn lint"
   },

@@ -16,7 +16,8 @@ describe('SessionFromToken', function () {
             getTokenFromRequest,
             getLookupFromToken,
             findUserByLookup,
-            createSession
+            createSession,
+            callNextWithError: true
         });
 
         const req = Object.create(express.request);

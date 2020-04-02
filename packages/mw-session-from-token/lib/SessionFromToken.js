@@ -1,6 +1,18 @@
 module.exports = SessionFromToken;
 
 /**
+ * @typedef {object} User
+ * @prop {string} id
+ */
+
+/**
+ * @typedef {import('express').Request} Req
+ * @typedef {import('express').Response} Res
+ * @typedef {import('express').NextFunction} Next
+ * @typedef {import('express').RequestHandler} RequestHandler
+ */
+
+/**
  * Returns a connect middleware function which exchanges a token for a session
  *
  * @template Token
@@ -13,7 +25,7 @@ module.exports = SessionFromToken;
  * @param { (req: Req, res: Res, user: User) => Promise<void> } deps.createSession
  * @param { boolean } deps.callNextWithError - Whether next should be call with an error or just pass through
  *
- * @returns {ExpressMiddlewareFn}
+ * @returns {RequestHandler}
  */
 function SessionFromToken({
     getTokenFromRequest,
@@ -22,7 +34,13 @@ function SessionFromToken({
     createSession,
     callNextWithError
 }) {
-    return async function handler(req, res, next) {
+    /**
+     * @param {Req} req
+     * @param {Res} res
+     * @param {Next} next
+     * @returns {Promise<void>}
+     */
+    async function handler(req, res, next) {
         try {
             const token = await getTokenFromRequest(req);
             const email = await getLookupFromToken(token);
@@ -36,5 +54,7 @@ function SessionFromToken({
                 next();
             }
         }
-    };
+    }
+
+    return handler;
 }
