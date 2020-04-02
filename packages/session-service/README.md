@@ -11,7 +11,7 @@ or
 
 ## Usage
 
-```
+```js
 const SessionService = require('@tryghost/session-service');
 
 const sessionService = SessionService({
