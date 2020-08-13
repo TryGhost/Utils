@@ -89,10 +89,10 @@
   resolved "https://registry.yarnpkg.com/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz#8da5c6530915653f3a1f38fd5f101d8c3f8079c5"
   integrity sha512-+iTbntw2IZPb/anVDbypzfQa+ay64MW0Zo8aJ8gZPWMMK6/OubMVb6lUPMagqjOPnmtauXnFCACVl3O7ogjeqQ==
 
-"@tryghost/string@0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@tryghost/string/-/string-0.1.10.tgz#6fb6a16cc628e6c22397c5889a7a85c29171374a"
-  integrity sha512-TqkuNTvM6zOHIugAc3lnok4U4e4kKLvZz/Oo5Kka1jMHe70SrJZ3X1ljZEn7RloV3PdHmLUE5zN3Zvj2aC1avg==
+"@tryghost/string@0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@tryghost/string/-/string-0.1.11.tgz#259e101a6fa7d08870e5c3b12091f62eb61c3725"
+  integrity sha512-k7Ix+Qd+oTVgFP45Y/EfU38HsJ1GLp04FU6ImlghsrA+3X4a+Prh+CJMTsDxISLjO5a4OCPFcmxCZBH8ueoOTw==
   dependencies:
     unidecode "^0.1.8"
 
