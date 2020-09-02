@@ -1500,10 +1500,10 @@ fn-args@^5.0.0:
   resolved "https://registry.yarnpkg.com/fn-args/-/fn-args-5.0.0.tgz#7a18e105c8fb3bf0a51c30389bf16c9ebe740bb3"
   integrity sha512-CtbfI3oFFc3nbdIoHycrfbrxiGgxXBXXuyOl49h47JawM1mYrqpiRqnH5CB2mBatdXvHHOUO6a+RiAuuvKt0lw==
 
-folder-hash@3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/folder-hash/-/folder-hash-3.3.2.tgz#30c5ee2638ab25074ed2916bde75019c7f11965a"
-  integrity sha512-uxh7WEwwgNCALdyqdiyKi35Ahy9wQcZGb5IXKFig9/tsfByHMsHuQOgeiYyY0gNYF/rYB2kSZJ7BJjMb67PxMA==
+folder-hash@3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/folder-hash/-/folder-hash-3.3.3.tgz#883c8359d54f91b3f02c1a646c00c30e5831365b"
+  integrity sha512-SDgHBgV+RCjrYs8aUwCb9rTgbTVuSdzvFmLaChsLre1yf+D64khCW++VYciaByZ8Rm0uKF8R/XEpXuTRSGUM1A==
   dependencies:
     debug "^4.1.1"
     graceful-fs "~4.2.0"
