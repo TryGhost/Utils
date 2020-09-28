@@ -1418,10 +1418,10 @@ fast-safe-stringify@^2.0.7:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.7.tgz#124aa885899261f68aedb42a7c080de9da608743"
   integrity sha512-Utm6CdzT+6xsDk2m8S6uL8VHxNwI6Jub+e9NYTcAms28T84pTa25GJQV9j0CY0N1rM8hK4x6grpF2BQf+2qwVA==
 
-fastest-validator@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-1.6.1.tgz#3ec0098dac23c5d3276402d3a951c60b64947c85"
-  integrity sha512-ZERqtib8U+wWyCeu+JfrxwLe4W1iZLYqMzeguNmNQ10oobkgI2/1UiDBp/64es8q51speTE4JeUNUemKkjY7Yg==
+fastest-validator@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-1.7.0.tgz#e696308f1ddab2f2f517b0b67bcd252bf0be44c0"
+  integrity sha512-g8G9gNYHVH2EdsIOAnQ60xTeRtf+yitBudR1/5ZpGCIUyXpYv4H9oVT4mwocUOAi/JH9X3kC/R3P6tiukItbvg==
 
 fastq@1.8.0:
   version "1.8.0"
@@ -2146,10 +2146,10 @@ just-extend@^4.0.2:
   resolved "https://registry.yarnpkg.com/just-extend/-/just-extend-4.0.2.tgz#f3f47f7dfca0f989c55410a7ebc8854b07108afc"
   integrity sha512-FrLwOgm+iXrPV+5zDU6Jqu4gCRXbWEQg2O3SKONsWE4w7AXFRkryS53bpWdaL9cNol+AmR3AEYz6kn+o0fCPnw==
 
-kleur@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.1.tgz#80b49dd7d1afeba41b8dcdf4ecfff9252205fc52"
-  integrity sha512-BsNhM6T/yTWFG580CRnYhT3LfUuPK7Hwrm+W2H0G8lK/nogalP5Nsrh/cHjxVVkzl0sFm7z8b8rNcZCfKxeoxA==
+kleur@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.2.tgz#aa58ce5e76b84fbd571307f1d1b77f74db8593f3"
+  integrity sha512-GDy+aV+1kr510OLi3Rkb81+t3orUyX5iHjNFEmHw6WJg6PB71HPhCLHOh2pWNMKLd7L7ywI9rzpSR664E20TQQ==
 
 lazystream@^1.0.0:
   version "1.0.0"
@@ -2406,22 +2406,22 @@ mocha@8.1.3:
     yargs-parser "13.1.2"
     yargs-unparser "1.6.1"
 
-moleculer@0.14.10:
-  version "0.14.10"
-  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.10.tgz#c0c1828feed95b96a95ed81991eb3265123ffa18"
-  integrity sha512-3HS8cBAIzhCX8x+R/9yS31NlNRp9u9iyN3lWZbmVv1MrlXqkqPCZXLNNCyaB+iSC6Ncuh97MCsv0dUosA7qpKA==
+moleculer@0.14.11:
+  version "0.14.11"
+  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.11.tgz#870a0e9d929b88afbae7594f677fe93718f1ea41"
+  integrity sha512-u8uO5PTMgyW1ZD1rKkIOCwthOfSyR9z1FfcpflGO20IKI9zqJxy5VRQ0BTGfHcrTD/+o/ux5eAFV1i2CwidpxQ==
   dependencies:
     args "^5.0.1"
     es6-error "^4.1.1"
     eventemitter2 "^6.4.3"
-    fastest-validator "^1.6.1"
+    fastest-validator "^1.7.0"
     fn-args "^5.0.0"
     glob "^7.1.6"
     ipaddr.js "^2.0.0"
-    kleur "^4.1.1"
+    kleur "^4.1.2"
     lodash "^4.17.20"
     lru-cache "^6.0.0"
-    node-fetch "^2.6.0"
+    node-fetch "^2.6.1"
 
 moment@2.27.0, moment@^2.19.3:
   version "2.27.0"
@@ -2538,10 +2538,10 @@ node-addon-api@^3.0.2:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.0.2.tgz#04bc7b83fd845ba785bb6eae25bc857e1ef75681"
   integrity sha512-+D4s2HCnxPd5PjjI0STKwncjXTUKKqm74MDMz9OPXavjsGmjkvwgLtA5yoxJUdmpj52+2u+RrXgPipahKczMKg==
 
-node-fetch@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
-  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+node-fetch@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-loggly-bulk@^2.2.4:
   version "2.2.4"
