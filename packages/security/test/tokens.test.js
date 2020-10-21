@@ -39,10 +39,11 @@ describe('Utils: tokens', function () {
             password: '12345678'
         });
 
-        tokenIsCorrect.should.eql(true);
+        tokenIsCorrect.correct.should.eql(true);
+        should(tokenIsCorrect.reason).be.undefined;
     });
 
-    it('compare: error', function () {
+    it('compare: error from invalid password', function () {
         const expires = Date.now() + 60 * 1000;
         const dbHash = uuid.v4();
         let token;
@@ -61,7 +62,54 @@ describe('Utils: tokens', function () {
             password: '123456'
         });
 
-        tokenIsCorrect.should.eql(false);
+        tokenIsCorrect.correct.should.eql(false);
+        tokenIsCorrect.reason.should.eql('invalid');
+    });
+
+    it('compare: error from invalid expires parameter', function () {
+        const invalidDate = 'not a date';
+        const dbHash = uuid.v4();
+        let token;
+        let tokenIsCorrect;
+
+        token = security.tokens.resetToken.generateHash({
+            email: 'test1@ghost.org',
+            expires: invalidDate,
+            password: '12345678',
+            dbHash: dbHash
+        });
+
+        tokenIsCorrect = security.tokens.resetToken.compare({
+            token: token,
+            dbHash: dbHash,
+            password: '123456'
+        });
+
+        tokenIsCorrect.correct.should.eql(false);
+        tokenIsCorrect.reason.should.eql('invalid_expiry');
+    });
+
+    it('compare: error from expired token', function () {
+        const dateInThePast = Date.now() - 60 * 1000;
+        const dbHash = uuid.v4();
+        let token;
+        let tokenIsCorrect;
+
+        token = security.tokens.resetToken.generateHash({
+            email: 'test1@ghost.org',
+            expires: dateInThePast,
+            password: '12345678',
+            dbHash: dbHash
+        });
+
+        tokenIsCorrect = security.tokens.resetToken.compare({
+            token: token,
+            dbHash: dbHash,
+            password: '123456'
+        });
+
+        tokenIsCorrect.correct.should.eql(false);
+        tokenIsCorrect.reason.should.eql('expired');
     });
 
     it('extract', function () {
@@ -145,7 +193,7 @@ describe('Utils: tokens', function () {
             password: '12345678'
         });
 
-        tokenIsCorrect.should.eql(true);
+        tokenIsCorrect.correct.should.eql(true);
     });
 });
 

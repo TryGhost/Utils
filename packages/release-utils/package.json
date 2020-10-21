@@ -1,6 +1,6 @@
 {
   "name": "@tryghost/release-utils",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "repository": "https://github.com/TryGhost/Ghost-Utils/tree/master/packages/release-utils",
   "author": "Ghost Foundation",
   "license": "MIT",
@@ -18,13 +18,13 @@
     "access": "public"
   },
   "devDependencies": {
-    "mocha": "8.1.3",
+    "mocha": "8.2.0",
     "should": "13.2.3",
-    "sinon": "9.0.3"
+    "sinon": "9.2.0"
   },
   "dependencies": {
     "bluebird": "3.7.2",
-    "emoji-regex": "9.0.0",
+    "emoji-regex": "9.2.0",
     "execa": "4.0.3",
     "lodash": "4.17.20",
     "request": "2.88.2",
