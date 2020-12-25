@@ -171,6 +171,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/lodash@^4.14.165":
+  version "4.14.166"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.166.tgz#07e7f2699a149219dbc3c35574f126ec8737688f"
+  integrity sha512-A3YT/c1oTlyvvW/GQqG86EyqWNrT/tisOIh2mW3YCgcx71TNjiTZA3zYZWA5BCmtsOTXjhliy4c4yEkErw6njA==
+
 "@types/mime@*":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.1.tgz#dc488842312a7f075149312905b5e3c0b054c79d"
@@ -876,7 +881,14 @@ crc@^3.4.4:
   dependencies:
     buffer "^5.1.0"
 
-cron-validate@1.4.1, cron-validate@^1.4.1:
+cron-validate@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/cron-validate/-/cron-validate-1.4.2.tgz#1ecf9a5689e5697d17c2337bbfd8606bed7d441e"
+  integrity sha512-GdjNeiZjNA9u6BItfhnd1MFPbT86wmJ2/2BwDQyXZY0mb9nhLSeh3PVKk7G185qfUSwbtGNtCLrKI/9pclvGrg==
+  dependencies:
+    yup "0.32.8"
+
+cron-validate@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/cron-validate/-/cron-validate-1.4.1.tgz#d637f677a2f5fa37ed61d265a17af502b02b12d6"
   integrity sha512-83VZ6/I52ybU8lwvrAgjnwR70/1pl867pgE4LbzO+ha+rZOmNMRqMm8vVG9s7a2fpnBQR6/+F7oRiGVfnC+9Ug==
@@ -2567,6 +2579,11 @@ nan@^2.14.0:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
 
+nanoclone@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/nanoclone/-/nanoclone-0.2.1.tgz#dd4090f8f1a110d26bb32c49ed2f5b9235209ed4"
+  integrity sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==
+
 nanoid@3.1.12:
   version "3.1.12"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.12.tgz#6f7736c62e8d39421601e4a0c77623a97ea69654"
@@ -4019,6 +4036,19 @@ yup@0.30.0:
     "@babel/runtime" "^7.10.5"
     lodash "^4.17.20"
     lodash-es "^4.17.11"
+    property-expr "^2.0.4"
+    toposort "^2.0.2"
+
+yup@0.32.8:
+  version "0.32.8"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.32.8.tgz#16e4a949a86a69505abf99fd0941305ac9adfc39"
+  integrity sha512-SZulv5FIZ9d5H99EN5tRCRPXL0eyoYxWIP1AacCrjC9d4DfP13J1dROdKGfpfRHT3eQB6/ikBl5jG21smAfCkA==
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "@types/lodash" "^4.14.165"
+    lodash "^4.17.20"
+    lodash-es "^4.17.11"
+    nanoclone "^0.2.1"
     property-expr "^2.0.4"
     toposort "^2.0.2"
 
