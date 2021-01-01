@@ -2825,6 +2825,13 @@ p-wait-for@3.1.0:
   dependencies:
     p-timeout "^3.0.0"
 
+p-wait-for@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/p-wait-for/-/p-wait-for-3.2.0.tgz#640429bcabf3b0dd9f492c31539c5718cb6a3f1f"
+  integrity sha512-wpgERjNkLrBiFmkMEjuZJEWKKDrNfHCKA1OhyN1wg1FrLkULbviEy6py1AyJUgZ72YWFbZ38FIpnqvVqAlDUwA==
+  dependencies:
+    p-timeout "^3.0.0"
+
 parent-module@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/parent-module/-/parent-module-1.0.1.tgz#691d2709e78c79fae3a156622452d00762caaaa2"
