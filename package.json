@@ -1,6 +1,6 @@
 {
   "private": true,
-  "repository": "https://github.com/TryGhost/Ghost-Utils",
+  "repository": "https://github.com/TryGhost/Utils",
   "author": "Ghost Foundation",
   "license": "MIT",
   "workspaces": [

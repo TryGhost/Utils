@@ -11,7 +11,7 @@
     },
     "local": {
         "public": "true",
-        "repo": "https://github.com/TryGhost/Ghost-Utils",
+        "repo": "https://github.com/TryGhost/Utils",
         "scope": "@tryghost"
     }
 }
