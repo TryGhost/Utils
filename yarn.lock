@@ -1500,10 +1500,10 @@ fastest-validator@^1.7.0:
   resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-1.7.0.tgz#e696308f1ddab2f2f517b0b67bcd252bf0be44c0"
   integrity sha512-g8G9gNYHVH2EdsIOAnQ60xTeRtf+yitBudR1/5ZpGCIUyXpYv4H9oVT4mwocUOAi/JH9X3kC/R3P6tiukItbvg==
 
-fastq@1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.10.0.tgz#74dbefccade964932cdf500473ef302719c652bb"
-  integrity sha512-NL2Qc5L3iQEsyYzweq7qfgy5OtXCmGzGvhElGEd/SoFWEMOEczNh5s5ocaF01HDetxz+p8ecjNPA6cZxxIHmzA==
+fastq@1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.10.1.tgz#8b8f2ac8bf3632d67afcd65dac248d5fdc45385e"
+  integrity sha512-AWuv6Ery3pM+dY7LYS8YIaCiQvUaos9OB1RyNgaOWnaX+Tik7Onvcsf8x8c+YtDeT0maYLniBip2hox5KtEXXA==
   dependencies:
     reusify "^1.0.4"
 
