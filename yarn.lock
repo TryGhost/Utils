@@ -552,10 +552,10 @@ braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-bree@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/bree/-/bree-4.1.1.tgz#a29371d45adfb21225885e23030fa708c18da8eb"
-  integrity sha512-jTCqlI0Ll4pYxLoSdpv3lndY3++Ksgqq40bdtTNyufNVBpFzJNSXuL7/iEv2257MleprKJw28SIK8YhJpLBlJg==
+bree@5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/bree/-/bree-5.0.1.tgz#85e0e38a7aa9733cfa868c4de3fa9b5f9fbec4af"
+  integrity sha512-x9KWU23arJV6c8RaE9+PU5rKGt9weHNvfZNeWoZJF88Xt4RigUat7Gu1LgTQ3VCa8glD1FxAWPkoyZ3VsdSecg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@breejs/later" "^4.0.2"
