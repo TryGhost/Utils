@@ -11,19 +11,23 @@ module.exports.connectAndSend = (socketAddress, logging, message) => {
         const connect = (options = {}) => {
             let wasResolved = false;
 
-            const waitTimeout = setTimeout(() => {
-                logging.info('Bootstrap socket timed out.');
+            const cleanup = () => {
+                if (wasResolved) {
+                    return;
+                }
 
                 if (!client.destroyed) {
                     client.destroy();
                 }
 
-                if (wasResolved) {
-                    return;
-                }
-
                 wasResolved = true;
                 resolve();
+            };
+
+            const waitTimeout = setTimeout(() => {
+                logging.info('Bootstrap socket timed out.');
+
+                cleanup();
             }, 1000 * 5);
 
             client.connect(socketAddress.port, socketAddress.host, () => {
@@ -33,12 +37,7 @@ module.exports.connectAndSend = (socketAddress, logging, message) => {
 
                 client.write(JSON.stringify(message));
 
-                if (wasResolved) {
-                    return;
-                }
-
-                wasResolved = true;
-                resolve();
+                cleanup();
             });
 
             client.on('close', () => {
@@ -70,12 +69,7 @@ module.exports.connectAndSend = (socketAddress, logging, message) => {
                         connect(options);
                     }, 150);
                 } else {
-                    if (wasResolved) {
-                        return;
-                    }
-
-                    wasResolved = true;
-                    resolve();
+                    cleanup();
                 }
             });
         };
