@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
       - 'renovate/*'
 jobs:
   build:
@@ -22,12 +22,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: yarn global add lerna
+      - run: yarn global add lerna@3
       - run: yarn
       - run: yarn test
 
       - uses: daniellockyer/action-slack-build@master
-        if: failure() && github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: failure() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           status: ${{ job.status }}
         env:
