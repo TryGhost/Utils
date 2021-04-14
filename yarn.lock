@@ -145,10 +145,10 @@
   dependencies:
     "@elastic/elasticsearch" "^7.10.0"
 
-"@tryghost/string@0.1.14":
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/@tryghost/string/-/string-0.1.14.tgz#e799151eb5af62b47634403e0c10c48709b2a118"
-  integrity sha512-lzZgGdLEOy2YY8mAebSkP4Y9MgzH/Ef5ADDW8Z31dv8PJILfRG7vuXWwr/SKUmV6mzETyxKTnO9CIbLExaC8VQ==
+"@tryghost/string@0.1.17":
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/@tryghost/string/-/string-0.1.17.tgz#deebdfcc0440e71ee8ff8101c9d30bd4a746a768"
+  integrity sha512-Z2BD7jOEG2ak28crhY6iaN/BqAi6ksNBUHzoknXmmoAN7UPGMuuMQ4PLu5kHUl6AGW/lIeBDoM0IfF4jkM6D0g==
   dependencies:
     unidecode "^0.1.8"
 
