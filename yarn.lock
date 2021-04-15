@@ -1406,10 +1406,10 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
-eventemitter2@^6.4.3:
-  version "6.4.3"
-  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.4.3.tgz#35c563619b13f3681e7eb05cbdaf50f56ba58820"
-  integrity sha512-t0A2msp6BzOf+QAcI6z9XMktLj52OjGQg+8SJH6v5+3uxNpWYRR3wQmfA+6xtMU9kOC59qk9licus5dYcrYkMQ==
+eventemitter2@^6.4.4:
+  version "6.4.4"
+  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.4.4.tgz#aa96e8275c4dbeb017a5d0e03780c65612a1202b"
+  integrity sha512-HLU3NDY6wARrLCEwyGKRBvuWYyvW6mHYv72SJJAH3iJN3a6eVUvkjFkcxah1bcTgGVBBrFdIopBJPhCQFMLyXw==
 
 execa@4.1.0:
   version "4.1.0"
@@ -1527,10 +1527,10 @@ fast-safe-stringify@^2.0.7:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.7.tgz#124aa885899261f68aedb42a7c080de9da608743"
   integrity sha512-Utm6CdzT+6xsDk2m8S6uL8VHxNwI6Jub+e9NYTcAms28T84pTa25GJQV9j0CY0N1rM8hK4x6grpF2BQf+2qwVA==
 
-fastest-validator@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-1.7.0.tgz#e696308f1ddab2f2f517b0b67bcd252bf0be44c0"
-  integrity sha512-g8G9gNYHVH2EdsIOAnQ60xTeRtf+yitBudR1/5ZpGCIUyXpYv4H9oVT4mwocUOAi/JH9X3kC/R3P6tiukItbvg==
+fastest-validator@^1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/fastest-validator/-/fastest-validator-1.10.1.tgz#b8cff07f80940206f929f8a0484ecf77d741c4ff"
+  integrity sha512-nhQP8JI16Ltml3kFKCEckKzxmPDYXZw0r+zF83Kf5qcJmA2Hoo4ORSo+SduxNiIbKpSS0i+3mV/UPhu8Po7Qkw==
 
 fastq@1.11.0:
   version "1.11.0"
@@ -2230,10 +2230,10 @@ just-extend@^4.0.2:
   resolved "https://registry.yarnpkg.com/just-extend/-/just-extend-4.0.2.tgz#f3f47f7dfca0f989c55410a7ebc8854b07108afc"
   integrity sha512-FrLwOgm+iXrPV+5zDU6Jqu4gCRXbWEQg2O3SKONsWE4w7AXFRkryS53bpWdaL9cNol+AmR3AEYz6kn+o0fCPnw==
 
-kleur@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.2.tgz#aa58ce5e76b84fbd571307f1d1b77f74db8593f3"
-  integrity sha512-GDy+aV+1kr510OLi3Rkb81+t3orUyX5iHjNFEmHw6WJg6PB71HPhCLHOh2pWNMKLd7L7ywI9rzpSR664E20TQQ==
+kleur@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.4.tgz#8c202987d7e577766d039a8cd461934c01cda04d"
+  integrity sha512-8QADVssbrFjivHWQU7KkMgptGTl6WAcSdlbBPY4uNF+mWr6DGcKrvY2w4FQJoXch7+fKMjj0dRrL75vk3k23OA==
 
 lazystream@^1.0.0:
   version "1.0.0"
@@ -2552,22 +2552,23 @@ mocha@8.3.2:
     yargs-parser "20.2.4"
     yargs-unparser "2.0.0"
 
-moleculer@0.14.11:
-  version "0.14.11"
-  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.11.tgz#870a0e9d929b88afbae7594f677fe93718f1ea41"
-  integrity sha512-u8uO5PTMgyW1ZD1rKkIOCwthOfSyR9z1FfcpflGO20IKI9zqJxy5VRQ0BTGfHcrTD/+o/ux5eAFV1i2CwidpxQ==
+moleculer@0.14.13:
+  version "0.14.13"
+  resolved "https://registry.yarnpkg.com/moleculer/-/moleculer-0.14.13.tgz#85fc55c15e09496a57dfa2050a6e7368c8743bb7"
+  integrity sha512-ak5MIFWb0WwMBIIqw/cKlhFj+0huA7LjAYrv5bLSdluG0+aBRl3ZtST+6Ix4UA5qZ6cwhMsX+m9QtXGIs6CdVA==
   dependencies:
     args "^5.0.1"
     es6-error "^4.1.1"
-    eventemitter2 "^6.4.3"
-    fastest-validator "^1.7.0"
+    eventemitter2 "^6.4.4"
+    fastest-validator "^1.10.1"
     fn-args "^5.0.0"
     glob "^7.1.6"
     ipaddr.js "^2.0.0"
-    kleur "^4.1.2"
-    lodash "^4.17.20"
+    kleur "^4.1.4"
+    lodash "^4.17.21"
     lru-cache "^6.0.0"
     node-fetch "^2.6.1"
+    recursive-watch "^1.1.4"
 
 moment@2.27.0, moment@^2.19.3:
   version "2.27.0"
@@ -3090,6 +3091,13 @@ readdirp@~3.5.0:
   integrity sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==
   dependencies:
     picomatch "^2.2.1"
+
+recursive-watch@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/recursive-watch/-/recursive-watch-1.1.4.tgz#7a340f860dd715836a592f008cceba5a1dd0b734"
+  integrity sha512-fWejAmdLi7B/jipBUjTLnqId+PK+573fbGNbdaNA/AiAnQAx6OYOLCGWRs0W5+PyM1rLzZSWK2f40QpHSR49PQ==
+  dependencies:
+    ttl "^1.3.0"
 
 regenerator-runtime@^0.13.4:
   version "0.13.7"
@@ -3800,6 +3808,11 @@ tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+
+ttl@^1.3.0:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/ttl/-/ttl-1.3.1.tgz#d8fa510bedb6a956d85b60ec56a57339ae0d5b2c"
+  integrity sha512-+bGy9iDAqg3WSfc2ZrprToSPJhZjqy7vUv9wupQzsiv+BVPVx1T2a6G4T0290SpQj+56Toaw9BiLO5j5Bd7QzA==
 
 tunnel-agent@^0.6.0:
   version "0.6.0"
