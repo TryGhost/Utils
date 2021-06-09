@@ -1,0 +1,11 @@
+{
+  "include": ["packages/**/*.js"],
+  "compilerOptions": {
+     "checkJs": true,
+     "module": "commonjs",
+     "target": "es2018"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
