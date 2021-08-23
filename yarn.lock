@@ -126,9 +126,9 @@
   integrity sha512-/BHF5HAx3em7/KkzVKm3LrsD6HZAXuXO1AJZQ3cRRBZj4oHZDviWPYu0aEplAqDFNHZPW6d3G7KN+ONcCCC7pw==
 
 "@types/node@*":
-  version "16.6.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.6.1.tgz#aee62c7b966f55fc66c7b6dfa1d58db2a616da61"
-  integrity sha512-Sr7BhXEAer9xyGuCN3Ek9eg9xPviCF2gfu9kTfuU2HkTVAMYSDeX40fvpmo72n5nansg3nsBjuQBrsS28r+NUw==
+  version "16.7.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.1.tgz#c6b9198178da504dfca1fd0be9b2e1002f1586f0"
+  integrity sha512-ncRdc45SoYJ2H4eWU9ReDfp3vtFqDYhjOsKlFFUDEn8V1Bgr2RjYal8YT5byfadWIRluhPFU6JiDOl0H6Sl87A==
 
 "@types/yauzl@^2.9.1":
   version "2.9.2"
@@ -408,9 +408,9 @@ body-parser@1.19.0:
     type-is "~1.6.17"
 
 boolean@^3.0.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/boolean/-/boolean-3.1.2.tgz#e30f210a26b02458482a8cc353ab06f262a780c2"
-  integrity sha512-YN6UmV0FfLlBVvRvNPx3pz5W/mUoYB24J4WSXOKP/OOJpi+Oq6WYqPaNTHzjI0QzwWtnvEd5CGYyQPgp1jFxnw==
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/boolean/-/boolean-3.1.4.tgz#f51a2fb5838a99e06f9b6ec1edb674de67026435"
+  integrity sha512-3hx0kwU3uzG6ReQ3pnaFQPSktpBw6RHN3/ivDKEuU8g1XSfafowyvDnadjv1xp8IZqhtSukxlwv9bF6FhX8m0w==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -428,9 +428,9 @@ braces@~3.0.2:
     fill-range "^7.0.1"
 
 bree@^6.2.0:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/bree/-/bree-6.2.1.tgz#a8874d8d3e4fa081ada17c5c62a55cf30a1e81e9"
-  integrity sha512-apgOBJp/4onxroljplYKMUP1gxxUKhoftSh63h037avAuQLM7vrtJuyB8TYE9+dzduWkjb2CCKwfOkqEpMFdAg==
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/bree/-/bree-6.3.0.tgz#1d2276dc36537e7b522ee4ae4395da263b81c7fe"
+  integrity sha512-m8UjOAXATfE3JVTeuj1cotNQaUp6tXlO8Ge5NPb1bST4MO0FV3hkJf5PfaLyB8ALVJhFsptofxSBrtJkkXTngg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@breejs/later" "^4.0.2"
@@ -1274,9 +1274,9 @@ fastest-validator@^1.11.1:
   integrity sha512-y0pXBCgGfY3mqbBL9sn2LtAxfJICyOr5cuOnCjyiKg4VoXVmDaLBDwnnj4QC1pSY5B4upln5k8RyLszlLXzXlw==
 
 fastq@^1.11.0:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.11.1.tgz#5d8175aae17db61947f8b162cfc7f63264d22807"
-  integrity sha512-HOnr8Mc60eNYl1gzwp6r5RoUyAn5/glBolUzP/Ez6IFVPMPirxn/9phgL6zhOtaTy7ISwPvQ+wT+hfcRZh/bzw==
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.12.0.tgz#ed7b6ab5d62393fb2cc591c853652a5c318bf794"
+  integrity sha512-VNX0QkHK3RsXVKr9KrlUv/FoTa0NdbYoHHl7uXHv2rzyHSlxjdNAKug2twd9luJxpcyNeAgf5iPPMutJO67Dfg==
   dependencies:
     reusify "^1.0.4"
 
