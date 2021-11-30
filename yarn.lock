@@ -316,14 +316,6 @@
     "@tryghost/root-utils" "^0.3.7"
     debug "^4.3.1"
 
-"@tryghost/ignition-errors@^0.1.0":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@tryghost/ignition-errors/-/ignition-errors-0.1.8.tgz#6d4c4d4e02d32403ca1e574eaa91b3c0d138d6f6"
-  integrity sha512-4KYU+kDXZyP7tmzyHiUkfDy9RWxKAtA/6xTGdxYHurE5ZlT++cDDfdUtF0v3308GGUzKlBzRc3jmLjDYpngcBQ==
-  dependencies:
-    lodash "^4.17.21"
-    uuid "^8.3.2"
-
 "@tryghost/root-utils@^0.3.7":
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/@tryghost/root-utils/-/root-utils-0.3.7.tgz#d56a4a1493b90ce36feb64a99cda86ec8a356b49"
@@ -4263,11 +4255,6 @@ uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
-
-uuid@^8.3.2:
-  version "8.3.2"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
-  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"
