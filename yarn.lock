@@ -1202,7 +1202,7 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-css-tree@^1.0.0-alpha.39, css-tree@^1.1.2:
+css-tree@^1.0.0-alpha.39:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.1.3.tgz#eb4870fb6fd7707327ec95c2ff2ab09b5e8db91d"
   integrity sha512-tRpdppF7TRazZrjJ6v3stzv93qxRcSsFmW6cX0Zm2NVKpxE1WV1HblnghVv9TreireHkqI/VDEsfolRF1p6y7Q==
@@ -1210,12 +1210,20 @@ css-tree@^1.0.0-alpha.39, css-tree@^1.1.2:
     mdn-data "2.0.14"
     source-map "^0.6.1"
 
-csso@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/csso/-/csso-4.2.0.tgz#ea3a561346e8dc9f546d6febedd50187cf389529"
-  integrity sha512-wvlcdIbf6pwKEk7vHj8/Bkc0B4ylXZruLvOgs9doS5eOsOpuodOV2zJChSpkp+pRpYQLQMeF04nr3Z68Sta9jA==
+css-tree@~2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-2.0.4.tgz#be44314f17e9ac85fe894a5888941782e1123c29"
+  integrity sha512-b4IS9ZUMtGBiNjzYbcj9JhYbyei99R3ai2CSxlu8GQDnoPA/P+NU85hAm0eKDc/Zp660rpK6tFJQ2OSdacMHVg==
   dependencies:
-    css-tree "^1.1.2"
+    mdn-data "2.0.23"
+    source-map-js "^1.0.1"
+
+csso@^5.0.0:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/csso/-/csso-5.0.3.tgz#10986ad2546e877b8b7bfbf930702239407af4d4"
+  integrity sha512-93gBHTJ6EQlLNhIX5Ho8VAJD2t2T2wg1xHDjbIUm/oQ7iFiSUTo9jSojiQK0pEZ3lMhYDrQO7Rcd70M68+VrtA==
+  dependencies:
+    css-tree "~2.0.4"
 
 custom-error-instance@2.1.1:
   version "2.1.1"
@@ -2914,6 +2922,11 @@ mdn-data@2.0.14:
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
   integrity sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==
 
+mdn-data@2.0.23:
+  version "2.0.23"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.23.tgz#dfb6c41e50a0edb808cf340973ab29321b70808e"
+  integrity sha512-IonVb7pfla2U4zW8rc7XGrtgq11BvYeCxWN8HS+KFBnLDE7XDK9AAMVhRuG6fj9BBsjc69Fqsp6WEActEdNTDQ==
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -4194,6 +4207,11 @@ snake-case@^3.0.3:
   dependencies:
     dot-case "^3.0.4"
     tslib "^2.0.3"
+
+source-map-js@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
+  integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
 source-map-support@~0.5.20:
   version "0.5.21"
