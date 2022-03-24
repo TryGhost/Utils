@@ -364,15 +364,6 @@
     "@elastic/elasticsearch" "7.17.0"
     "@tryghost/debug" "^0.1.13"
 
-"@tryghost/errors@1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@tryghost/errors/-/errors-1.2.5.tgz#e3dd6a462364f899e5267e282fe690ecfbdb4ea2"
-  integrity sha512-6lsnonu7XI556Sg8j8Svlmaoen6DVVnRch3sPFu2Ugohbprzz3eQiJzNXXXaeIRgwBkTcSPHErYNMIf3fiI5Aw==
-  dependencies:
-    lodash "^4.17.21"
-    utils-copy-error "1.0.1"
-    uuid "^8.3.2"
-
 "@tryghost/errors@^0.2.11":
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/@tryghost/errors/-/errors-0.2.17.tgz#9b89f3845256ace5650593f41cc86d64965b56ed"
@@ -387,6 +378,15 @@
   integrity sha512-6vd5s2tKX4uQoKjwyP7rICPVY3jj9balc5XLcmwQjUm4yuRAL9AAcpbf1O4AwNN1gs/cN+Wknxjk/LeeIvGbGA==
   dependencies:
     lodash "^4.17.21"
+    uuid "^8.3.2"
+
+"@tryghost/errors@^1.2.5":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@tryghost/errors/-/errors-1.2.6.tgz#4cb15ec63de4e0fe632ce6fa84191e42c708371c"
+  integrity sha512-9kNE9z9CIKjXKNWS03/pH8w9y1bTaLDTt1gIUQmBNlyS3zP56F1uJkz88Y5ySdp1Rbuee1UG+Kc8/L2NJQxsBg==
+  dependencies:
+    lodash "^4.17.21"
+    utils-copy-error "1.0.1"
     uuid "^8.3.2"
 
 "@tryghost/ignition-errors@^0.1.0":
@@ -1229,7 +1229,7 @@ css-tree@^1.0.0-alpha.39, css-tree@^1.1.2:
     mdn-data "2.0.14"
     source-map "^0.6.1"
 
-csso@4.2.0:
+csso@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/csso/-/csso-4.2.0.tgz#ea3a561346e8dc9f546d6febedd50187cf389529"
   integrity sha512-wvlcdIbf6pwKEk7vHj8/Bkc0B4ylXZruLvOgs9doS5eOsOpuodOV2zJChSpkp+pRpYQLQMeF04nr3Z68Sta9jA==
@@ -1807,7 +1807,7 @@ external-editor@^3.0.3:
     iconv-lite "^0.4.24"
     tmp "^0.0.33"
 
-extract-zip@2.0.1:
+extract-zip@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/extract-zip/-/extract-zip-2.0.1.tgz#663dca56fe46df890d5f131ef4a06d22bb8ba13a"
   integrity sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==
@@ -2875,7 +2875,7 @@ lodash.uniqby@4.5.0:
     lodash._baseiteratee "~4.7.0"
     lodash._baseuniq "~4.6.0"
 
-lodash@4.17.21, lodash@^4.17.14, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21:
+lodash@^4.17.14, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
