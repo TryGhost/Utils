@@ -133,6 +133,22 @@ if (limitService.checkIfAnyOverLimit()) {
 }
 ```
 
+### Transactions
+
+Some limit types (`max` or `maxPeriodic`) need to fetch the current count from the database. Sometimes you need those checks to also run in a transaction. To fix that, you can pass the `transacting` option to all the available checks.
+
+```js
+db.transaction((transacting) => {
+    const options = {transacting};
+    
+    await limitService.errorIfWouldGoOverLimit('newsletters', options);
+    await limitService.errorIfIsOverLimit('newsletters', options);
+    const a = await limitService.checkIsOverLimit('newsletters', options);
+    const b = await limitService.checkWouldGoOverLimit('newsletters', options);
+    const c = await limitService.checkIfAnyOverLimit(options);
+});
+```
+
 ### Types of limits
 At the moment there are four different types of limits that limit service allows to define. These types are:
 1. `flag` - is an "on/off" switch for certain feature. Example usecase: "disable all emails". It's identified by a `disabled: true` property in the "limits" configuration.
