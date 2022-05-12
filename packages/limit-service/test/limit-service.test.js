@@ -347,7 +347,7 @@ describe('Limit Service', function () {
             sinon.restore();
         });
 
-        it('passes metadata for checkIsOverLimit', async function () {
+        it('passes options for checkIsOverLimit', async function () {
             const limitService = new LimitService();
 
             let limits = {
@@ -366,17 +366,17 @@ describe('Limit Service', function () {
 
             limitService.loadLimits({limits, errors, subscription});
 
-            const metadata = {
+            const options = {
                 testData: 'true'
             };
 
-            await limitService.checkIsOverLimit('staff', metadata);
+            await limitService.checkIsOverLimit('staff', options);
 
             sinon.assert.callCount(maxSpy, 1);
-            sinon.assert.alwaysCalledWithExactly(maxSpy, metadata);
+            sinon.assert.alwaysCalledWithExactly(maxSpy, options);
         });
 
-        it('passes metadata for checkWouldGoOverLimit', async function () {
+        it('passes options for checkWouldGoOverLimit', async function () {
             const limitService = new LimitService();
 
             let limits = {
@@ -395,17 +395,17 @@ describe('Limit Service', function () {
 
             limitService.loadLimits({limits, errors, subscription});
 
-            const metadata = {
+            const options = {
                 testData: 'true'
             };
 
-            await limitService.checkWouldGoOverLimit('staff', metadata);
+            await limitService.checkWouldGoOverLimit('staff', options);
 
             sinon.assert.callCount(maxSpy, 1);
-            sinon.assert.alwaysCalledWithExactly(maxSpy, metadata);
+            sinon.assert.alwaysCalledWithExactly(maxSpy, options);
         });
 
-        it('passes metadata for errorIfIsOverLimit', async function () {
+        it('passes options for errorIfIsOverLimit', async function () {
             const limitService = new LimitService();
 
             let limits = {
@@ -424,17 +424,17 @@ describe('Limit Service', function () {
 
             limitService.loadLimits({limits, errors, subscription});
 
-            const metadata = {
+            const options = {
                 testData: 'true'
             };
 
-            await limitService.errorIfIsOverLimit('staff', metadata);
+            await limitService.errorIfIsOverLimit('staff', options);
 
             sinon.assert.callCount(maxSpy, 1);
-            sinon.assert.alwaysCalledWithExactly(maxSpy, metadata);
+            sinon.assert.alwaysCalledWithExactly(maxSpy, options);
         });
 
-        it('passes metadata for errorIfWouldGoOverLimit', async function () {
+        it('passes options for errorIfWouldGoOverLimit', async function () {
             const limitService = new LimitService();
 
             let limits = {
@@ -453,17 +453,17 @@ describe('Limit Service', function () {
 
             limitService.loadLimits({limits, errors, subscription});
 
-            const metadata = {
+            const options = {
                 testData: 'true'
             };
 
-            await limitService.errorIfWouldGoOverLimit('staff', metadata);
+            await limitService.errorIfWouldGoOverLimit('staff', options);
 
             sinon.assert.callCount(maxSpy, 1);
-            sinon.assert.alwaysCalledWithExactly(maxSpy, metadata);
+            sinon.assert.alwaysCalledWithExactly(maxSpy, options);
         });
 
-        it('passes metadata for checkIfAnyOverLimit', async function () {
+        it('passes options for checkIfAnyOverLimit', async function () {
             const limitService = new LimitService();
 
             let limits = {
@@ -495,20 +495,20 @@ describe('Limit Service', function () {
 
             limitService.loadLimits({limits, errors, subscription});
 
-            const metadata = {
+            const options = {
                 testData: 'true'
             };
 
-            (await limitService.checkIfAnyOverLimit(metadata)).should.be.false();
+            (await limitService.checkIfAnyOverLimit(options)).should.be.false();
 
             sinon.assert.callCount(flagSpy, 1);
-            sinon.assert.alwaysCalledWithExactly(flagSpy, metadata);
+            sinon.assert.alwaysCalledWithExactly(flagSpy, options);
 
             sinon.assert.callCount(maxSpy, 2);
-            sinon.assert.alwaysCalledWithExactly(maxSpy, metadata);
+            sinon.assert.alwaysCalledWithExactly(maxSpy, options);
 
             sinon.assert.callCount(maxPeriodSpy, 1);
-            sinon.assert.alwaysCalledWithExactly(maxPeriodSpy, metadata);
+            sinon.assert.alwaysCalledWithExactly(maxPeriodSpy, options);
         });
     });
 });

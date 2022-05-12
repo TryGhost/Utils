@@ -70,17 +70,17 @@ class LimitService {
     /**
      *
      * @param {String} limitName - name of the configured limit
-     * @param {Object} [metadata] - limit parameters
-     * @param {Object} [metadata.transacting] Transaction to run the count query on (if required for the chosen limit)
+     * @param {Object} [options] - limit parameters
+     * @param {Object} [options.transacting] Transaction to run the count query on (if required for the chosen limit)
      * @returns
      */
-    async checkIsOverLimit(limitName, metadata = {}) {
+    async checkIsOverLimit(limitName, options = {}) {
         if (!this.isLimited(limitName)) {
             return;
         }
 
         try {
-            await this.limits[limitName].errorIfIsOverLimit(metadata);
+            await this.limits[limitName].errorIfIsOverLimit(options);
             return false;
         } catch (error) {
             if (error instanceof this.errors.HostLimitError) {
@@ -94,17 +94,17 @@ class LimitService {
     /**
      *
      * @param {String} limitName - name of the configured limit
-     * @param {Object} [metadata] - limit parameters
-     * @param {Object} [metadata.transacting] Transaction to run the count query on (if required for the chosen limit)
+     * @param {Object} [options] - limit parameters
+     * @param {Object} [options.transacting] Transaction to run the count query on (if required for the chosen limit)
      * @returns
      */
-    async checkWouldGoOverLimit(limitName, metadata = {}) {
+    async checkWouldGoOverLimit(limitName, options = {}) {
         if (!this.isLimited(limitName)) {
             return;
         }
 
         try {
-            await this.limits[limitName].errorIfWouldGoOverLimit(metadata);
+            await this.limits[limitName].errorIfWouldGoOverLimit(options);
             return false;
         } catch (error) {
             if (error instanceof this.errors.HostLimitError) {
@@ -118,43 +118,43 @@ class LimitService {
     /**
      *
      * @param {String} limitName - name of the configured limit
-     * @param {Object} [metadata] - limit parameters
-     * @param {Object} [metadata.transacting] Transaction to run the count query on (if required for the chosen limit)
+     * @param {Object} [options] - limit parameters
+     * @param {Object} [options.transacting] Transaction to run the count query on (if required for the chosen limit)
      * @returns
      */
-    async errorIfIsOverLimit(limitName, metadata = {}) {
+    async errorIfIsOverLimit(limitName, options = {}) {
         if (!this.isLimited(limitName)) {
             return;
         }
 
-        await this.limits[limitName].errorIfIsOverLimit(metadata);
+        await this.limits[limitName].errorIfIsOverLimit(options);
     }
 
     /**
      *
      * @param {String} limitName - name of the configured limit
-     * @param {Object} [metadata] - limit parameters
-     * @param {Object} [metadata.transacting] Transaction to run the count query on (if required for the chosen limit)
+     * @param {Object} [options] - limit parameters
+     * @param {Object} [options.transacting] Transaction to run the count query on (if required for the chosen limit)
      * @returns
      */
-    async errorIfWouldGoOverLimit(limitName, metadata = {}) {
+    async errorIfWouldGoOverLimit(limitName, options = {}) {
         if (!this.isLimited(limitName)) {
             return;
         }
 
-        await this.limits[limitName].errorIfWouldGoOverLimit(metadata);
+        await this.limits[limitName].errorIfWouldGoOverLimit(options);
     }
 
     /**
      * Checks if any of the configured limits acceded
      * 
-     * @param {Object} [metadata] - limit parameters
-     * @param {Object} [metadata.transacting] Transaction to run the count queries on (if required for the chosen limit)
+     * @param {Object} [options] - limit parameters
+     * @param {Object} [options.transacting] Transaction to run the count queries on (if required for the chosen limit)
      * @returns {Promise<boolean>}
      */
-    async checkIfAnyOverLimit(metadata = {}) {
+    async checkIfAnyOverLimit(options = {}) {
         for (const limit in this.limits) {
-            if (await this.checkIsOverLimit(limit, metadata)) {
+            if (await this.checkIsOverLimit(limit, options)) {
                 return true;
             }
         }
