@@ -104,7 +104,7 @@ class MaxLimit extends Limit {
      * @returns 
      */
     async currentCountQuery(options = {}) {
-        return await this.currentCountQueryFn(options.transacting ? options.transacting : (this.db ? this.db.knex : undefined));
+        return await this.currentCountQueryFn(options.transacting ?? this.db?.knex);
     }
 
     /**
