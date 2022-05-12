@@ -17,6 +17,7 @@ or
 Below is a sample code to wire up limit service and perform few common limit checks:
 
 ```js
+const knex = require('knex');
 const errors = require('@tryghost/errors');
 const LimitService = require('@tryghost/limit-service');
 
@@ -80,15 +81,17 @@ const subscription = {
 const helpLink = 'https://ghost.org/help/';
 
 // initialize knex db connection for the limit service to use when running query checks
-const db = knex({
-    client: 'mysql',
-    connection: {
-        user: 'root',
-        password: 'toor',
-        host: 'localhost',
-        database: 'ghost',
-    }
-});
+const db = {
+    knex: knex({
+        client: 'mysql',
+        connection: {
+            user: 'root',
+            password: 'toor',
+            host: 'localhost',
+            database: 'ghost',
+        }
+    });
+};
 
 // finish initializing the limits service
 limitService.loadLimits({limits, subscription, db, helpLink, errors});
@@ -140,7 +143,7 @@ Some limit types (`max` or `maxPeriodic`) need to fetch the current count from t
 ```js
 db.transaction((transacting) => {
     const options = {transacting};
-    
+
     await limitService.errorIfWouldGoOverLimit('newsletters', options);
     await limitService.errorIfIsOverLimit('newsletters', options);
     const a = await limitService.checkIsOverLimit('newsletters', options);
