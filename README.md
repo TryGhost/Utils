@@ -1,41 +1,8 @@
 # Ghost Utils
 
-## Install
+:bulb: This repository is now part of the main [Ghost monorepo](https://github.com/TryGhost/Ghost). The individual packages now live at [/ghost/](https://github.com/TryGhost/Ghost/tree/main/ghost). 
 
-
-## Usage
-
-
-## Develop
-
-This is a mono repository, managed with [lerna](https://lernajs.io/).
-
-1. `git clone` this repo & `cd` into it as usual
-2. `yarn setup` is mapped to `lerna bootstrap`
-   - installs all external dependencies
-   - links all internal dependencies
-
-To add a new package to the repo:
-   - install [slimer](https://github.com/TryGhost/slimer)
-   - run `slimer new <package name>`
-
-
-## Run
-
-- `yarn dev`
-
-
-## Test
-
-- `yarn lint` run just eslint
-- `yarn test` run lint and tests
-
-
-## Publish
-
-- `yarn ship` is an alias for `lerna publish`
-    - Publishes all packages which have changed
-    - Also updates any packages which depend on changed packages
+[Contributing to Ghost](https://github.com/TryGhost/Ghost/blob/main/.github/CONTRIBUTING.md) is now much easier with everything in one place. Hope to see you in the monorepo :wave:
 
 
 # Copyright & License
