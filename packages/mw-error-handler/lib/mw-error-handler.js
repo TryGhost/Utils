@@ -3,6 +3,7 @@ const semver = require('semver');
 const debug = require('@tryghost/debug')('error-handler');
 const errors = require('@tryghost/errors');
 const {prepareStackForUser} = require('@tryghost/errors').utils;
+const {isReqResUserSpecific, cacheControlValues} = require('@tryghost/http-cache-utils');
 const tpl = require('@tryghost/tpl');
 
 const messages = {
@@ -62,8 +63,8 @@ module.exports.prepareError = (err, req, res, next) => {
     }
 
     if (!errors.utils.isGhostError(err)) {
-        // We need a special case for 404 errors
-        if (err.statusCode && err.statusCode === 404) {
+        // We need a special case for 404 errors & bookshelf empty errors
+        if ((err.statusCode && err.statusCode === 404) || err.message === 'EmptyResponse') {
             err = new errors.NotFoundError({
                 err: err
             });
@@ -90,11 +91,6 @@ module.exports.prepareError = (err, req, res, next) => {
     // alternative for res.status();
     res.statusCode = err.statusCode;
 
-    // never cache errors
-    res.set({
-        'Cache-Control': 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0'
-    });
-
     next(err);
 };
 
@@ -104,6 +100,13 @@ module.exports.prepareStack = (err, req, res, next) => { // eslint-disable-line 
     next(clonedError);
 };
 
+/**
+ * @private the method is exposed for testing purposes only
+ * @param {Object} err
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ */
 const jsonErrorRenderer = (err, req, res, next) => { // eslint-disable-line no-unused-vars
     res.json({
         errors: [{
@@ -133,6 +136,31 @@ const jsonErrorRendererV2 = (err, req, res, next) => { // eslint-disable-line no
             // @TODO: add ghostErrorCode here in a major (I thought V2 was for the V2 api, but it's actually the newer/correct handler)
         }]
     });
+};
+
+/**
+ * 
+ * @param {String} [cacheControlHeaderValue] cache-control header value
+ */
+module.exports.prepareErrorCacheControl = (cacheControlHeaderValue) => {
+    return (err, req, res, next) => {
+        let cacheControl = cacheControlHeaderValue;
+        if (!cacheControlHeaderValue) {
+            // never cache errors unless it's a 404
+            cacheControl = cacheControlValues.private;
+
+            // Do not include 'private' cache-control directive for 404 responses
+            if (err.statusCode === 404 && req.method === 'GET' && !isReqResUserSpecific(req, res)) {
+                cacheControl = cacheControlValues.noCacheDynamic;
+            }
+        }
+
+        res.set({
+            'Cache-Control': cacheControl
+        });
+
+        next(err);
+    };
 };
 
 const prepareUserMessage = (err, req) => {
@@ -238,6 +266,8 @@ module.exports.handleJSONResponse = sentry => [
     // Make sure the error can be served
     module.exports.prepareError,
     // Handle the error in Sentry
+    // Add cache-control header
+    module.exports.prepareErrorCacheControl(),
     sentry.errorHandler,
     // Format the stack for the user
     module.exports.prepareStack,
@@ -252,6 +282,8 @@ module.exports.handleJSONResponse = sentry => [
 module.exports.handleJSONResponseV2 = sentry => [
     // Make sure the error can be served
     module.exports.prepareError,
+    // Add cache-control header
+    module.exports.prepareErrorCacheControl(),
     // Handle the error in Sentry
     sentry.errorHandler,
     // Format the stack for the user
@@ -263,6 +295,8 @@ module.exports.handleJSONResponseV2 = sentry => [
 module.exports.handleHTMLResponse = sentry => [
     // Make sure the error can be served
     module.exports.prepareError,
+    // Add cache-control header
+    module.exports.prepareErrorCacheControl(cacheControlValues.private),
     // Handle the error in Sentry
     sentry.errorHandler,
     // Format the stack for the user

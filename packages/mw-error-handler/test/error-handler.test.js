@@ -2,20 +2,22 @@
 // const testUtils = require('./utils');
 require('./utils');
 const should = require('should');
-const {InternalServerError} = require('@tryghost/errors');
+const assert = require('assert');
+const {cacheControlValues} = require('@tryghost/http-cache-utils');
+const {InternalServerError, NotFoundError} = require('@tryghost/errors');
 const {
     prepareError,
     handleJSONResponse,
     handleJSONResponseV2,
     handleHTMLResponse,
-    prepareStack,
+    prepareErrorCacheControl,
     resourceNotFound
 } = require('../');
 
 describe('Prepare Error', function () {
     it('Correctly prepares a normal error', function (done) {
         prepareError(new Error('test!'), {}, {
-            set: () => {}
+            set: () => { }
         }, (err) => {
             err.statusCode.should.eql(500);
             err.name.should.eql('InternalServerError');
@@ -23,23 +25,74 @@ describe('Prepare Error', function () {
             done();
         });
     });
-});
 
-describe('Prepare Stack', function () {
-    it('Correctly prepares the stack for an error', function (done) {
-        prepareStack(new Error('test!'), {}, {}, (err) => {
-            // Includes "Stack Trace" text prepending human readable trace
-            err.stack.should.startWith('Error: test!\nStack Trace:');
+    it('Correctly prepares a 404 error', function (done) {
+        let error = {message: 'Oh dear', statusCode: 404};
+
+        prepareError(error, {}, {
+            set: () => { }
+        }, (err) => {
+            err.statusCode.should.eql(404);
+            err.name.should.eql('NotFoundError');
+            err.stack.should.startWith('NotFoundError: Resource could not be found');
+            err.hideStack.should.eql(true);
             done();
         });
+    });
+
+    it('Correctly prepares an error array', function (done) {
+        prepareError([new Error('test!')], {}, {
+            set: () => { }
+        }, (err) => {
+            err.statusCode.should.eql(500);
+            err.name.should.eql('InternalServerError');
+            err.stack.should.startWith('Error: test!');
+            done();
+        });
+    });
+
+    it('Correctly prepares a handlebars errpr', function (done) {
+        let error = new Error('obscure handlebars message!');
+        error.stack += '\nnode_modules/handlebars/something';
+
+        prepareError(error, {}, {
+            set: () => { }
+        }, (err) => {
+            err.statusCode.should.eql(400);
+            err.name.should.eql('IncorrectUsageError');
+            err.stack.should.startWith('Error: obscure handlebars message!');
+            done();
+        });
+    });
+});
+
+it('Sets noCache cache-control header for non-user-specific 404 responses', function (done) {
+    const req = {
+        method: 'GET',
+        get: () => {
+            return false;
+        }
+    };
+    const res = {
+        set: sinon.spy(),
+        get: () => {
+            return false;
+        }
+    };
+    prepareErrorCacheControl()(new NotFoundError(), req, res, () => {
+        assert(res.set.calledOnce);
+        assert(res.set.calledWith({
+            'Cache-Control': cacheControlValues.noCacheDynamic
+        }));
+        done();
     });
 });
 
 describe('Error renderers', function () {
     it('Renders JSON', function (done) {
         const errorRenderer = handleJSONResponse({
-            errorHandler: () => {}
-        })[3];
+            errorHandler: () => { }
+        })[4];
 
         errorRenderer(new Error('test!'), {}, {
             json: (data) => {
@@ -47,27 +100,13 @@ describe('Error renderers', function () {
                 data.errors[0].message.should.eql('test!');
                 done();
             }
-        }, () => {});
-    });
-
-    it('Renders JSON for v2', function (done) {
-        const errorRenderer = handleJSONResponseV2({
-            errorHandler: () => {}
-        })[3];
-
-        errorRenderer(new Error('test!'), {}, {
-            json: (data) => {
-                data.errors.length.should.eql(1);
-                data.errors[0].message.should.eql('test!');
-                done();
-            }
-        }, () => {});
+        }, () => { });
     });
 
     it('Handles unknown errors when preparing user message', function (done) {
         const errorRenderer = handleJSONResponseV2({
-            errorHandler: () => {}
-        })[3];
+            errorHandler: () => { }
+        })[4];
 
         errorRenderer(new RangeError('test!'), {
             frameOptions: {
@@ -81,13 +120,13 @@ describe('Error renderers', function () {
                 data.errors[0].context.should.eql('test!');
                 done();
             }
-        }, () => {});
+        }, () => { });
     });
 
     it('Uses templates when required', function (done) {
         const errorRenderer = handleJSONResponseV2({
-            errorHandler: () => {}
-        })[3];
+            errorHandler: () => { }
+        })[4];
 
         errorRenderer(new InternalServerError({
             message: 'test!'
@@ -100,17 +139,41 @@ describe('Error renderers', function () {
             json: (data) => {
                 data.errors.length.should.eql(1);
                 data.errors[0].message.should.eql('Internal server error, cannot list blog.');
+                data.errors[0].context.should.eql('test!');
                 done();
             }
-        }, () => {});
+        }, () => { });
+    });
+
+    it('Uses defined message + context when available', function (done) {
+        const errorRenderer = handleJSONResponseV2({
+            errorHandler: () => { }
+        })[4];
+
+        errorRenderer(new InternalServerError({
+            message: 'test!',
+            context: 'Image was too large.'
+        }), {
+            frameOptions: {
+                docName: 'images',
+                method: 'upload'
+            }
+        }, {
+            json: (data) => {
+                data.errors.length.should.eql(1);
+                data.errors[0].message.should.eql('Internal server error, cannot upload image.');
+                data.errors[0].context.should.eql('test! Image was too large.');
+                done();
+            }
+        }, () => { });
     });
 
     it('Exports the HTML renderer', function () {
         const renderer = handleHTMLResponse({
-            errorHandler: () => {}
+            errorHandler: () => { }
         });
 
-        renderer.length.should.eql(3);
+        renderer.length.should.eql(4);
     });
 });
 
